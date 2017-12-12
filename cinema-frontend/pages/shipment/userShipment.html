@@ -1,0 +1,39 @@
+<div class="w3-top" ng-controller="userAuthCtrl">
+    <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide">ГЛАВНАЯ</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <div class="w3-dropdown-hover">
+                <button class="w3-bar-item w3-button" title="Notifications">ЛИЧНЫЙ КАБИНЕТ <i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a ng-click = "goToUserEdit()" class="w3-bar-item w3-button">МОЙ АККАУНТ</a>
+                    <a ng-click = "logout()" class="w3-bar-item w3-button">ВЫХОД</a>
+                </div>
+            </div>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    </div>
+</div>
+<div class="content" ng-controller="userAuthCtrl">
+    <h1>Отгрузки</h1>
+    <br>
+    <div class="tab">
+        <button class="tablinks" ng-click = "goToUserIndicators()">Моя компания</button>
+        <button class="tablinkstwo " ng-click = "goToUserAcceptance()">Приёмка</button>
+        <button class="tablinks redbutton" ng-click = "goToUserShipment()">Отгрузки</button>
+        <button class="tablinks" ng-click = "goToUserCommodity()">Товары</button>
+    </div>
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin" ><br>
+        <br>
+        <div id="piechart">Здесь скоро будут данные об отгрузках</div>
+        <br>
+
+
+    </div>
+
+
+
+</div>
+
+
+

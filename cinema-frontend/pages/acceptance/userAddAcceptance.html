@@ -1,0 +1,133 @@
+<div class="w3-top" ng-controller="userAuthCtrl">
+    <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide">ГЛАВНАЯ</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#commentCinema" class="w3-bar-item w3-button"> ОТЗЫВЫ</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-bar-item w3-button" title="Notifications">ЛИЧНЫЙ КАБИНЕТ <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a ng-click="goToUserEdit()" class="w3-bar-item w3-button">МОЙ АККАУНТ</a>
+                    <a ng-click="logout()" class="w3-bar-item w3-button">ВЫХОД</a>
+                </div>
+            </div>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    </div>
+</div>
+<div class="content" ng-controller="userAuthCtrl">
+    <h1>MyStock</h1>
+    <br>
+    <div class="tab">
+        <button class="tablinks redbutton" ng-click="goToUserIndicators()">Моя компания</button>
+        <button class="tablinkstwo" ng-click="goToUserAcceptance()">Приёмка</button>
+        <button class="tablinks" ng-click="goToUserShipment()">Отгрузки</button>
+        <button class="tablinks" ng-click="goToUserCommodity()">Товары</button>
+    </div>
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin" ng-controller="addAcceptanceCtrl"><br>
+        <div class="tabt">
+            <button class="tablinks" ng-click="goToUserIndicators()">Показатели</button>
+            <button class="tablinkstwo" ng-click="goToUserCompany()">Юр. лица</button>
+            <button class="tablinks redbutton" ng-click="goToUserStock()">Склады</button>
+        </div>
+        <br>
+        <div id="piechart">Здесь вы можете оставить данные о своей приёмке</div>
+        <br>
+        <div class="wrapper">
+            <form name="userAddStock" method="post">
+                <div class="regist left_block">
+
+                    <div class="form-group">
+                        <label>Поставщик</label>
+                        <br>
+                        <label>
+                            <select ng-model="supplierCompany" ng-options="x.companyName for x in companyList"
+                                    style="width:120px">
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Приемщик</label>
+                        <br>
+                        <label>
+                            <select ng-model="consumerCompany" ng-options="x.companyName for x in companyList"
+                                    style="width:120px">
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Склад</label>
+                        <br>
+                        <label>
+                            <select ng-model="selectedStock" ng-options="x.stockName for x in stockList"
+                                    style="width:120px">
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDateSess">Дата</label>
+                        <input type="date" name="showDate" ng-model="showDate" class="form-control" id="inputDateSess"
+                               style="width: 50%">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTimeSess">Время</label>
+                        <input type="time" name="showTime" ng-model="showTime" class="form-control" id="inputTimeSess"
+                               style="width: 50%">
+                    </div>
+                    <button ng-click="addAcceptance()" type="submit"
+                            name="send" class="btn">Подтвердить
+                    </button>
+                    <button ng-click="modalWindow()" type="submit"
+                            name="send" class="btn">Добавить товары
+                    </button>
+                    <button type="reset" class="btn">Сбросить</button>
+                </div>
+            </form>
+        </div>
+        <br>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Ваш билет</h2>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Изображение продукта</th>
+                        <th>Название</th>
+                        <th>Закупочная цена</th>
+                        <th>Цена продажи</th>
+                        <th>Ндс</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="commodity in commodityList">
+                        <td style="width:2%"><label>
+                            <input type="checkbox" value="{{commodity.id}}" data-ng-model="commodity.selected"/>
+                        </label></td>
+                        <th style="width:10%"><img ng-src={{commodity.commodityImagePath}} style="width:100%"></th>
+                        <th style="width:20%">{{commodity.commodityName}}</th>
+                        <th style="width:18%">{{commodity.purchasePrice}}</th>
+                        <th style="width:18%">{{commodity.sellingPrice}}</th>
+                        <th style="width:18%">{{commodity.valueAddedTax}}</th>
+                        <th style="width:9%"><label for="age_add"></label><input class="form-control"
+                                                                id="age_add" min="0" max="999" type="number" value="" data-ng-model="commodity.commodityCount"
+                                                                onkeypress="return inputInteger(event, /\d/);" data-ng-class="{'validate-border':validatebits[$index]}"></th>
+                        <th><a ng-click="deleteCommodity($index)"> <img src = "res/close-icon.png" class="shrink" width="20" align="center"></a></th>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="modal-footer">
+                    <a ng-click="RejectRequest()" class="w3-bar-item w3-button">Забронировать</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

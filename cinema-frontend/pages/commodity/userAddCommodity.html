@@ -1,0 +1,95 @@
+<div class="w3-top" ng-controller="userAuthCtrl">
+    <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide">ГЛАВНАЯ</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#commentCinema" class="w3-bar-item w3-button"> ОТЗЫВЫ</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-bar-item w3-button" title="Notifications">ЛИЧНЫЙ КАБИНЕТ <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a ng-click="goToUserEdit()" class="w3-bar-item w3-button">МОЙ АККАУНТ</a>
+                    <a ng-click="logout()" class="w3-bar-item w3-button">ВЫХОД</a>
+                </div>
+            </div>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    </div>
+</div>
+<div class="content" ng-controller="userAuthCtrl">
+    <h1>MyStock</h1>
+    <br>
+    <div class="tab">
+        <button class="tablinks redbutton" ng-click="goToUserIndicators()">Моя компания</button>
+        <button class="tablinkstwo" ng-click="goToUserAcceptance()">Приёмка</button>
+        <button class="tablinks" ng-click="goToUserShipment()">Отгрузки</button>
+        <button class="tablinks" ng-click="goToUserCommodity()">Товары</button>
+    </div>
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin" ng-controller="addCommodityCtrl"><br>
+        <div class="tabt">
+            <button class="tablinks" ng-click="goToUserIndicators()">Показатели</button>
+            <button class="tablinkstwo redbutton" ng-click="goToUserCompany()">Юр. лица</button>
+            <button class="tablinks" ng-click="goToUserStock()">Склады</button>
+        </div>
+        <br>
+        <div id="piechart">Здесь вы можете оставить данные о товаре</div>
+        <br>
+        <div class="wrapper">
+            <form name="userAddCommodity" method="post">
+                <div class="regist left_block">
+                    <div class="form-group">
+                        <label for="commodityName">Название товара</label>
+                        <input name="commodityName" ng-model="commodityName" id="commodityName" class="form-control"
+                               placeholder="Введите название товара">
+                    </div>
+                    <div class="form-group">
+                        <label for="vendorCode">Код производителя</label>
+                        <input name="vendorCode" ng-model="vendorCode" id="vendorCode" class="form-control"
+                               placeholder="Введите код производителя" value="" onkeypress="return inputInteger(event, /\d/);">
+                    </div>
+                    <div class="form-group">
+                        <label for="commodityWeight">Вес товара</label>
+                        <input name="commodityWeight" ng-model="commodityWeight" id="commodityWeight" class="form-control"
+                               placeholder="Введите вес товара" value="" onkeypress="return filterInput(event, /[0-9]|\./);">
+                    </div>
+                    <div class="form-group">
+                        <label for="commodityVolume">Объем товара</label>
+                        <input name="commodityVolume" ng-model="commodityVolume" id="commodityVolume" class="form-control"
+                               placeholder="Введите объем товара" value="" onkeypress="return filterInput(event, /[0-9]|\./);">
+                    </div>
+
+                </div>
+                <div class="regist right_block">
+                    <div class="form-group">
+                        <label for="purchasePrice">Закупочная цена</label>
+                        <input name="purchasePrice" ng-model="purchasePrice" id="purchasePrice" class="form-control "
+                               placeholder="Введите закупочную цену" value="" onkeypress="return filterInput(event, /[0-9]|\./);">
+                    </div>
+                    <div class="form-group">
+                        <label for="sellingPrice">Цена продажи</label>
+                        <input name="sellingPrice" ng-model="sellingPrice" id="sellingPrice" class="form-control"
+                               placeholder="Введите цену продажи" value="" onkeypress="return filterInput(event, /[0-9]|\./);">
+                    </div>
+                    <div class="form-group">
+                        <label for="valueAddedTax">Ндс %</label>
+                        <input name="valueAddedTax" ng-model="valueAddedTax" id="valueAddedTax"
+                               class="form-control" placeholder="Введите ндс (в процентах)" value="" onkeypress="return filterInput(event, /[0-9]|\./);">
+                    </div>
+                    <div class="form-group">
+                        <label for="dist">Добавьте описание</label>
+                        <p><textarea ng-model="description" name="description" cols="40" rows="3" id="dist"></textarea></p>
+                    </div>
+                    <div>
+                        <input type="file" id="fImg" class="btn" file-model="myFile"/>
+                    </div>
+                    <button ng-click = "uploadImg(myFile)" type="submit" name="send" class="btn">Добавить</button>
+                    <button type="reset" class="btn">Сбросить</button>
+                </div>
+            </form>
+        </div>
+        <br>
+    </div>
+</div>
+
+
+

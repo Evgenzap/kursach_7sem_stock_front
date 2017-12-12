@@ -1,0 +1,69 @@
+<div class="w3-top" ng-controller="userAuthCtrl">
+    <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide">ГЛАВНАЯ</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#commentCinema" class="w3-bar-item w3-button"> ОТЗЫВЫ</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-bar-item w3-button" title="Notifications">ЛИЧНЫЙ КАБИНЕТ <i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a ng-click = "goToUserEdit()" class="w3-bar-item w3-button">МОЙ АККАУНТ</a>
+                    <a ng-click = "logout()" class="w3-bar-item w3-button">ВЫХОД</a>
+                </div>
+            </div>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    </div>
+</div>
+<div class="content" ng-controller="userAuthCtrl">
+    <h1>MyStock</h1>
+    <br>
+    <div class="tab">
+        <button class="tablinks redbutton" ng-click="goToUserIndicators()">Моя компания</button>
+        <button class="tablinkstwo" ng-click="goToUserAcceptance()">Приёмка</button>
+        <button class="tablinks" ng-click="goToUserShipment()">Отгрузки</button>
+        <button class="tablinks" ng-click="goToUserCommodity()">Товары</button>
+    </div>
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+        <div class="tabt">
+            <button class="tablinks" ng-click="goToUserIndicators()">Показатели</button>
+            <button class="tablinkstwo" ng-click="goToUserCompany()">Юр. лица</button>
+            <button class="tablinkstwo redbutton" ng-click="goToUserStock()">Склады</button>
+        </div>
+        <br>
+        <h1>Склады</h1>
+        <br>
+        <div class="w3-padding-32">
+            <div class="w3-bar w3-border">
+                <a ng-click="goToUserAddStock()" class="w3-bar-item w3-button w3-light-green">Добавить</a>
+                <!--<a href="#" class="w3-bar-item w3-button">Краткое наименование</a>-->
+                <!--<a href="#" class="w3-bar-item w3-button">Код</a>-->
+                <!--<a href="#" class="w3-bar-item w3-button">Email</a>-->
+                <input class="w3-right w3-hide-small" type="text" name="search" placeholder="Search by name only..">
+            </div>
+        </div>
+        <div ng-controller="stockCtrl">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Адрес</th>
+                    <th>Полезный объем (в метрах кубических)</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="stock in stockList">
+                    <th>{{stock.stockName}}</th>
+                    <th>{{stock.stockAddress}}</th>
+                    <th>{{stock.stockVolume}}</th>
+                    <th><a ng-click="deleteStock($index)"> <img src = "res/close-icon.png" class="shrink" width="20" align="center"></a></th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

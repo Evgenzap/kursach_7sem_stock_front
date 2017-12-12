@@ -1,0 +1,69 @@
+<div class="w3-top" ng-controller="userAuthCtrl">
+    <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide">ГЛАВНАЯ</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#commentCinema" class="w3-bar-item w3-button"> ОТЗЫВЫ</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-bar-item w3-button" title="Notifications">ЛИЧНЫЙ КАБИНЕТ <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a ng-click="goToUserEdit()" class="w3-bar-item w3-button">МОЙ АККАУНТ</a>
+                    <a ng-click="logout()" class="w3-bar-item w3-button">ВЫХОД</a>
+                </div>
+            </div>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    </div>
+</div>
+<div class="content" ng-controller="userAuthCtrl">
+    <h1>Приёмка</h1>
+    <br>
+    <div class="tab">
+        <button class="tablinks " ng-click="goToUserIndicators()">Моя компания</button>
+        <button class="tablinkstwo redbutton" ng-click="goToUserAcceptance()">Приёмка</button>
+        <button class="tablinks" ng-click="goToUserShipment()">Отгрузки</button>
+        <button class="tablinks" ng-click="goToUserCommodity()">Товары</button>
+    </div>
+
+
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
+        <div class="tabt">
+            <button class="tablinkstwo redbutton" ng-click="goToUserAddAcceptance()">Товары</button>
+        </div>
+        <div id="piechart">Здесь скоро будет приёмка</div>
+        <br>
+        <div class="w3-padding-32">
+            <div class="w3-bar w3-border">
+                <a ng-click="goToUserAddAcceptance()" class="w3-bar-item w3-button w3-light-green">Добавить</a>
+                <input class="w3-right w3-hide-small" type="text" name="search" placeholder="Search by name only..">
+            </div>
+        </div>
+        <div ng-controller="commodityCtrl">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Изображение продукта</th>
+                    <th>Название</th>
+                    <th>Закупочная цена</th>
+                    <th>Цена продажи</th>
+                    <th>Ндс</th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="commodity in commodityList">
+                    <th style="width:10%"><img ng-src={{commodity.commodityImagePath}} style="width:100%"></th>
+                    <th style="width:25%">{{commodity.commodityName}}</th>
+                    <th style="width:20%">{{commodity.purchasePrice}}</th>
+                    <th style="width:20%">{{commodity.sellingPrice}}</th>
+                    <th style="width:20%">{{commodity.valueAddedTax}}</th>
+                    <th><a ng-click="deleteCommodity($index)"> <img src="res/close-icon.png" class="shrink" width="20"
+                                                                    align="center"></a></th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

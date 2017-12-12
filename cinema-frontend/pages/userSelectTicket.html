@@ -1,0 +1,297 @@
+<div class="w3-top" ng-controller="userAuthCtrl">
+    <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide">ГЛАВНАЯ</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#reviews" class="w3-bar-item w3-button"> ОТЗЫВЫ</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-bar-item w3-button" title="Notifications">ЛИЧНЫЙ КАБИНЕТ <i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a href="#userOwnTicket" class="w3-bar-item w3-button">МОИ ЗАКАЗЫ</a>
+                    <a ng-click = "goToUserEdit()" class="w3-bar-item w3-button">МОЙ АККАУНТ</a>
+                    <a ng-click = "logout()" class="w3-bar-item w3-button">ВЫХОД</a>
+                </div>
+            </div>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    </div>
+</div>
+
+<div class="book_ticket" ng-controller="ticketCtrl">
+    <h1>Доступные места</h1>
+    <p>Пожалуйста, выберите место в зале</p>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Фильм</th>
+            <th>Дата</th>
+            <th>Время</th>
+            <th>Зал</th>
+            <th>Ряд</th>
+            <th>Место</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>2</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>3</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>4</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>5</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>6</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>7</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>8</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>2</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>2</th>
+            <th><a>2</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>2</th>
+            <th><a>3</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>2</th>
+            <th><a>4</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>2</th>
+            <th><a>5</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>2</th>
+            <th><a>6</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr><tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr><tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+        <tr>
+            <th>Меч короля артура</th>
+            <th>11.05.2017</th>
+            <th>21:30</th>
+            <th>Оранжевая комната</th>
+            <th>1</th>
+            <th><a>1</a></th>
+        </tr>
+
+
+
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <a href="#admin" class="w3-bar-item w3-button w3-wide">ГЛАВНАЯ</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#admin" class="w3-bar-item w3-button">ДОБАВИТЬ КОМНАТУ</a>
+            <a href="#addFilm" class="w3-bar-item w3-button">ДОБАВИТЬ ФИЛЬМ</a>
+            <a href="#" class="w3-bar-item w3-button">ВЫХОД</a>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    </div>
+</div>
+<div class="users" ng-controller="mainCtrl">
+    <h1>Пользователи</h1>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>login</th>
+            <th>ФИО</th>
+            <th>email</th>
+            <th>Телефон</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="user in users._embedded.persons">
+            <th>{{user.username}}</th>
+            <th>{{user.name}}</th>
+            <th>{{user.email}}</th>
+            <th>{{user.phoneNumber}}</th>
+        </tr>
+        </tbody>
+    </table>
+</div>

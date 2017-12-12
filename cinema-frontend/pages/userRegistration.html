@@ -1,0 +1,41 @@
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <a href="#" class="w3-bar-item w3-button w3-wide">ГЛАВНАЯ</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#userAvtorization" class="w3-bar-item w3-button"> ВОЙТИ</a>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    </div>
+</div>
+<div class="regist_user" ng-controller="userRegistrationCtrl">
+    <h1>Регистрация</h1>
+    <div class="regist">
+        <form name="contact_form_regist" method="post">
+            <div class="form-group">
+                <label for="Login_regist">Логин</label>
+                <input  ng-model="user.username" name="contact_login_regist" id="Login_regist" class="form-control"  placeholder="Введите логин" value="" onkeypress="return filterInput(event, /\S/);">
+            </div>
+            <div class="form-group">
+                <label for="contact_name_regist">ФИО</label>
+                <input  ng-model="user.name" name="contact_name_regist" id="contact_name_regist" class="form-control"  placeholder="Введите фио">
+            </div>
+            <div class="form-group">
+                <label for="contact_email_regist">Адрес электронной почты</label>
+                <input  ng-model="user.email" name="contact_email_regist" id="contact_email_regist" class="form-control" placeholder="Введите email" value="" onkeypress="return filterInput(event, /\S/);">
+            </div>
+            <div class="form-group">
+                <label for="password_regist">Пароль</label>
+                <input  ng-model="user.password" name="password_regist" id="password_regist" type="password" class="form-control" onkeyup="check('password_regist', 'confirm_password_regist');" value="" onkeypress="return filterInput(event, /\S/);">
+            </div>
+            <div class="form-group">
+                <label for="confirm_password_regist">Подтвердите пароль:</label>
+                <input type="password" name="confirm_password_regist" id="confirm_password_regist" class="form-control" onkeyup="check('password_regist', 'confirm_password_regist');" value="" onkeypress="return filterInput(event, /\S/);">
+                <span id='message'></span>
+            </div>
+            <button type="submit" name="send" class="btn" ng-click="userRegistration(user.username, user.name, user.email, user.password)">Регистрация</button>
+            <button type="reset" class="btn">Сбросить</button>
+        </form>
+    </div>
+
+</div>

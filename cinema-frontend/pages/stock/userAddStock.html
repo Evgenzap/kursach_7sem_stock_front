@@ -1,0 +1,67 @@
+<div class="w3-top" ng-controller="userAuthCtrl">
+    <div class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide">ГЛАВНАЯ</a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+            <a href="#commentCinema" class="w3-bar-item w3-button"> ОТЗЫВЫ</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-bar-item w3-button" title="Notifications">ЛИЧНЫЙ КАБИНЕТ <i
+                        class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a ng-click="goToUserEdit()" class="w3-bar-item w3-button">МОЙ АККАУНТ</a>
+                    <a ng-click="logout()" class="w3-bar-item w3-button">ВЫХОД</a>
+                </div>
+            </div>
+        </div>
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    </div>
+</div>
+<div class="content" ng-controller="userAuthCtrl">
+    <h1>MyStock</h1>
+    <br>
+    <div class="tab">
+        <button class="tablinks redbutton" ng-click="goToUserIndicators()">Моя компания</button>
+        <button class="tablinkstwo" ng-click="goToUserAcceptance()">Приёмка</button>
+        <button class="tablinks" ng-click="goToUserShipment()">Отгрузки</button>
+        <button class="tablinks" ng-click="goToUserCommodity()">Товары</button>
+    </div>
+    <div class="w3-container w3-card-2 w3-white w3-round w3-margin" ng-controller="addStockCtrl"><br>
+        <div class="tabt">
+            <button class="tablinks" ng-click="goToUserIndicators()">Показатели</button>
+            <button class="tablinkstwo" ng-click="goToUserCompany()">Юр. лица</button>
+            <button class="tablinks redbutton" ng-click="goToUserStock()">Склады</button>
+        </div>
+        <br>
+        <div id="piechart">Здесь вы можете оставить данные о своем складе</div>
+        <br>
+        <div class="wrapper">
+            <form name="userAddStock" method="post">
+                <div class="regist left_block">
+                    <div class="form-group">
+                        <label for="stockName">Название склада</label>
+                        <input name="stockName" ng-model="stockName" id="stockName" class="form-control"
+                               placeholder="Введите название склада">
+                    </div>
+                    <div class="form-group">
+                        <label for="stockAddress">Адрес склада</label>
+                        <input name="stockAddress" ng-model="stockAddress" id="stockAddress" class="form-control"
+                               placeholder="Введите адрес склада">
+                    </div>
+                    <div class="form-group">
+                        <label for="stockVolume">Объем</label>
+                        <input name="stockVolume" ng-model="stockVolume" id="stockVolume" class="form-control"
+                               placeholder="Введите объем склада" value="" onkeypress="return inputInteger(event, /\d/);">
+                    </div>
+                    <button ng-click="addStock()" type="submit"
+                            name="send" class="btn">Подтвердить
+                    </button>
+                    <button type="reset" class="btn">Сбросить</button>
+                </div>
+            </form>
+        </div>
+        <br>
+    </div>
+</div>
+
+
+

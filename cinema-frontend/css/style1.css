@@ -1,0 +1,205 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+td:hover{
+background: #F0E68C;
+    color: red; 
+}
+p
+{ color: #8B0000;
+font-size: 16px;
+}
+br
+{color: black;
+font-size: 14px;
+}
+h1
+{
+     font-size: 48px;
+     text-align:  center;
+     color: black;
+}
+h2
+{
+    font-size: 36px;
+    text-align:  center;
+    color: black;
+}
+#fixblock {
+margin-left: 50px;
+width: 100px; /* ширина блока fixblock */
+/*height: 260px; /* высота блока fixblock */
+text-align:center; /* центрируют текст блока fixblock */
+/* граница блока толщиной=1px сплошная непрерывная линия черного цвета */
+position:fixed; /* параметр, при помощи которого мы фиксируем div-блок */
+background: linear-gradient(to top,  #DCDCDC,  #FFFFFF);
+border-radius: 5px 5px 5px 5px;
+box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+}
+#search, .regist{
+    background: url(../res/bc2.jpg);]
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    padding:20px;
+}
+.floating-box {
+    float: left;
+    max-width: 300px;
+    height: 75px;
+    margin: 10px;
+    border: 3px solid #73AD21;
+}
+
+.after-box {
+    clear: left;
+    border: 3px solid red;
+}
+.center{
+    margin: 75px auto 85px auto;
+    padding:20px; /* отступ для содержимого блока, со всех сторон = 10px */
+    max-width: 1600px; /* ширина блока fixblock */
+    height: 100%; /* высота блока fixblock */
+}
+.content{
+    border-radius: 5px 5px 5px 5px;
+    background: linear-gradient(to top,  #DCDCDC,  #FFFFFF);
+    margin: 75px auto 85px auto;
+    padding:20px; /* отступ для содержимого блока, со всех сторон = 10px */
+    height: 100%; /* высота блока fixblock */
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 20px;
+    flex: 1 0 auto;
+}
+ .users, .feed, .reviews_film, .show, .add_film, .book_ticket, .regist_user, .autoriz_user, .my_ticket, .edit_user, .add_show_film, .add_show_place, .add_show_time, .content2, .about_us, .reviews_cinema{
+    border-radius: 5px 5px 5px 5px;
+    background: linear-gradient(to top,  #DCDCDC,  #FFFFFF);
+    margin: 75px auto 85px auto;
+padding:20px; /* отступ для содержимого блока, со всех сторон = 10px */
+ max-width: 1600px; /* ширина блока fixblock */
+height: 100%; /* высота блока fixblock */
+box-shadow: 10px 10px 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 40px;
+    flex: 1 0 auto;
+}
+.maps{
+    max-width: 750px;
+    max-height: 600px;
+}
+.fut {
+
+    position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0;
+  background: white;
+  min-height: 60px;
+  min-width: 100%;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5); /* Параметры тени */
+  text-align: center;
+  padding:20px;
+    flex: 0 0 auto;
+}
+html{
+     background: url(../res/bc2.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+   }
+
+.cinemaCommentTable {
+    width: 300px;
+}
+div.tab {
+     overflow: hidden;
+     background-color: #f1f1f1;
+ }
+
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+div.tabt {
+    overflow: hidden;
+    background-color: #FFF;
+}
+
+
+/* Style the buttons inside the tab */
+div.tabt button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 12px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+.redbutton{
+    color: red;
+}
+input[type=text] {
+    border: 2px solid #ccc;
+    font-size: 14px;
+    background-color: white;
+    background-repeat: no-repeat;
+    padding: 7px 20px 6px 40px;
+
+}
+.img {margin-bottom: -8px;}
+.mySlides {display: none;}
+
+.shrink:hover {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+}
+
+div.wrapper {
+    width:100%;
+    clear:both;
+}
+
+div.left_block {
+    float:left;
+    width:49%;
+    margin: 0 15px 15px 0;
+}
+
+div.right_block {
+    float:right;
+    width:49%;
+    margin: 0 15px 15px 0;
+}
+
+.validate-border{
+    border:1px solid red;
+}
